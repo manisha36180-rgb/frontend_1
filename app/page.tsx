@@ -16,7 +16,7 @@ import {
   Trash2,
   ChevronRight,
   ChevronDown,
-  Home,
+  Home as HomeIcon,
   FileCheck,
   Camera,
   Image as ImageIcon,
@@ -171,8 +171,8 @@ const VesselsDashboard = () => {
 
       const newCounts: Record<string, number> = {};
       data?.forEach(report => {
-        const catId = report.category_id;
-        if (catId) {
+        const catId = String(report.category_id);
+        if (catId && report.category_id) {
           newCounts[catId] = (newCounts[catId] || 0) + 1;
         }
       });
