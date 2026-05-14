@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-maritime-dark: #020617;
+  --color-maritime-light: #f8fafc;
+  
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  
+  --font-sans: var(--font-active, var(--font-geist-sans));
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #0f172a;
+  --primary-foreground: #f8fafc;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #1e293b;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #0f172a;
+  --radius: 0.5rem;
+
+  /* Typography System */
+  --font-size-base: 16px;
+  --font-size-sm: 0.875rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  
+  --font-size-table: 0.875rem;
+  --table-row-spacing: 1rem;
+}
+
+.dark {
+  --background: #020617;
+  --foreground: #F8FAFC;
+  --card: #0F172A;
+  --card-foreground: #F8FAFC;
+  --popover: #0F172A;
+  --popover-foreground: #F8FAFC;
+  --primary: #F8FAFC;
+  --primary-foreground: #020617;
+  --secondary: #1E293B;
+  --secondary-foreground: #F8FAFC;
+  --muted: #1E293B;
+  --muted-foreground: #94A3B8;
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #F8FAFC;
+  --border: #1E293B;
+  --input: #1E293B;
+  --ring: #334155;
+}
+
+/* Accessibility Modes - High Contrast Bulletproof */
+:root[data-high-contrast="true"],
+html[data-high-contrast="true"],
+[data-high-contrast="true"] body {
+  --background: #000000 !important;
+  --foreground: #ffffff !important;
+  --card: #000000 !important;
+  --border: #ffffff !important;
+  --primary: #ffffff !important;
+  --primary-foreground: #000000 !important;
+  --accent: #ffff00 !important;
+  --accent-foreground: #000000 !important;
+  --muted-foreground: #ffffff !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+[data-high-contrast="true"] *:not(.text-accent):not(.bg-accent):not([class*="text-emerald"]):not([class*="bg-emerald"]):not([class*="text-rose"]):not([class*="bg-rose"]):not([class*="text-amber"]):not([class*="bg-amber"]):not(button):not(.toggle-track):not(.toggle-thumb) {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  background-color: transparent !important;
+}
+
+[data-high-contrast="true"] button:not(.bg-accent):not([class*="bg-emerald"]):not([class*="bg-rose"]):not([class*="bg-amber"]):not(.toggle-track):not(.toggle-thumb),
+[data-high-contrast="true"] input:not(.bg-accent),
+[data-high-contrast="true"] select:not(.bg-accent),
+[data-high-contrast="true"] textarea:not(.bg-accent) {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+}
+
+[data-high-contrast="true"] div[class*="bg-"]:not(.toggle-track):not(.toggle-thumb),
+[data-high-contrast="true"] section,
+[data-high-contrast="true"] header,
+[data-high-contrast="true"] aside,
+[data-high-contrast="true"] nav {
+  background-color: #000000 !important;
+  border-color: #ffffff !important;
+}
+
+[data-high-contrast="true"] .bg-accent,
+[data-high-contrast="true"] button.bg-accent,
+[data-high-contrast="true"] .selected {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+}
+
+[data-high-contrast="true"] .text-accent {
+  color: #ffff00 !important;
+}
+
+[data-high-contrast="true"] svg,
+[data-high-contrast="true"] svg * {
+  stroke: currentColor !important;
+}
+
+[data-high-contrast="true"] .toggle-track {
+  border: 2px solid #ffffff !important;
+  background-color: #000000 !important;
+}
+
+[data-high-contrast="true"] .toggle-track[class*="bg-accent"] {
+  background-color: #ffff00 !important;
+  border-color: #ffff00 !important;
+}
+
+[data-high-contrast="true"] .toggle-thumb {
+  background-color: #ffffff !important;
+}
+
+[data-high-contrast="true"] .toggle-track[class*="bg-accent"] .toggle-thumb {
+  background-color: #000000 !important;
+}
+
+[data-eye-comfort="true"] {
+  filter: sepia(0.3) contrast(0.9);
+}
+
+[data-dyslexia-font="true"] {
+  --font-active: var(--font-lexend), sans-serif !important;
+}
+
+[data-compact-mode="true"] {
+  --table-row-spacing: 0.5rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    font-size: var(--font-size-base);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-active, var(--font-sans));
+    font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  h1 { font-size: var(--font-size-4xl); }
+  h2 { font-size: var(--font-size-3xl); }
+  h3 { font-size: var(--font-size-2xl); }
+  p { font-size: 1rem; }
+  table { font-size: var(--font-size-table); }
+}
+
+.glass {
+  @apply bg-white/70 dark:bg-card/70 backdrop-blur-md border border-white/20 dark:border-border;
+}
+
+.sidebar-glass {
+  @apply bg-card dark:bg-card backdrop-blur-lg border-r border-border;
+}
+
+.nav-glass {
+  @apply bg-background/80 dark:bg-card/90 backdrop-blur-lg border-b border-border sticky top-0 z-50;
+}
